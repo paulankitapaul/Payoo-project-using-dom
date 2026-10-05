@@ -1,29 +1,70 @@
-document.getElementById('cashout-btn').addEventListener('click', function () {
-    const cashOutNumberInput = getValueById('cashout-number');
-    if(cashOutNumberInput.length !=11){
-        alert("Invaild-Number")
-    }
-    const cashOutAmmountInput = getValueById('cashout-ammount');
-    const balanceElement = document.getElementById('balance')
-    const balance = balanceElement.innerText;
-    const newBalance = Number(balance) - Number(cashOutAmmountInput);
-    if (newBalance < 0) {
-        alert('Invaild-ammount');
+document.getElementById('cashout-btn').addEventListener('click',function(){
+    const cashoutNumber = getValueById('cashout-number')
+    if(cashoutNumber.length !=11){
+        alert('invalid Number')
         return;
     }
-    const cashOutPinInput = getValueById('cashout-pin');
-    if(cashOutPinInput == '1234'){
-        alert('Cashout-Succcessfull');
-        balanceElement.innerText = newBalance;
-
-    }
-    else{
-        alert('Invaild-pin')
+    const cashoutAmount = getValueById('cashout-ammount')
+    if(cashoutAmount=='' || Number(cashoutAmount)<0){
+        alert('invaild ammount');
         return;
     }
-
-
+    const currentBalance = getBalance();
+    const balance = currentBalance -  Number(cashoutAmount);
+    const pin = getValueById('cashout-pin')
+    if(pin=='1234'){
+        alert('CashOut successfull')
+        setBalance(balance)
+    }
 })
+
+
+
+
+
+
+// document.getElementById('cashout-btn').addEventListener('click', function () {
+
+//     // Cashout number
+//     const cashOutNumber = getValueById('cashout-number');
+
+//     if (cashOutNumber.length !== 11) {
+//         alert("Invalid Number");
+//         return;
+//     }
+
+//     // Cashout amount
+//     const cashOutAmount = getValueById('cashout-ammount');
+
+//     // Amount empty/invalid kina
+//     if (cashOutAmount === "" || Number(cashOutAmount) <= 0) {
+//         alert("Invalid Amount");
+//         return;
+//     }
+
+//     // Current balance
+//     const currentBalance = getBalance();
+
+//     // New balance
+//     const newBalance = currentBalance - Number(cashOutAmount);
+
+//     if (newBalance < 0) {
+//         alert("Insufficient Balance");
+//         return;
+//     }
+
+//     // PIN
+//     const pin = getValueById('cashout-pin');
+
+//     if (pin === '1234') {
+//         alert("Cashout Successful");
+//         setBalance(newBalance);
+//     }
+//     else {
+//         alert("Invalid PIN");
+//         return;
+//     }
+// });
 
 
 

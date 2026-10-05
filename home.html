@@ -33,7 +33,7 @@
                     <img src="./assets/logo.png" alt="">
                 </div>
                 <div>
-                    <p class="text-[18px] font-extrabold "><span id="balance" >45000</span></p>
+                    <p class="text-[18px] font-extrabold "><span id="balance">45000</span></p>
                     <p class="text-[#848484]">Available Balance</p>
                 </div>
 
@@ -75,6 +75,41 @@
             </button>
         </div>
     </section>
+    <section id="add-money w-11/12 mx-auto py-5">
+        <h2 class="font-bold mt-4">Add Money</h2>
+        <div class="form pt-10">
+            <div class="card bg-base-100 w-full shadow-2xl">
+                <div class="card-body">
+                    <fieldset class="fieldset">
+                        <label class="label font-medium">Select A bank</label>
+                        <select class="select select-ghost w-full rounded-full">
+                            <option disabled selected>select bank</option>
+                            <option>UCB</option>
+                            <option>City</option>
+                            <option>Bank Asia</option>
+                        </select>
+
+                        <label class="label font-medium">Agent Number</label>
+                        <input type="email" class="input rounded-full bg-[#F4F5F7] text-black w-full"
+                            placeholder="Enter 11 digit number" id="add-money-number" />
+                        <br>
+                        <label class="label font-medium">Ammount</label>
+                        <input type="number" class="input rounded-full bg-[#F4F5F7] text-black w-full"
+                            placeholder="Enter ammount to withdraw" id="add-money-ammount" />
+                        <br>
+
+                        <label class="label font-bold">4 Digit Pin</label>
+                        <input maxlength="4" minlength="4" type="password"
+                            class="input rounded-full bg-[#F4F5F7] text-black w-full"
+                            placeholder="Enter 4 Digit Pin number" id="add-money-pin" />
+                        <button class="btn btn-primary mt-4 rounded-full w-full" id="add-money-btn">ADD
+                            Money</button>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+    </section>
     <section class="w-11/12 mx-auto py-5">
         <h2 class="font-bold mt-4">CashOut</h2>
         <div class="form pt-10">
@@ -92,9 +127,10 @@
 
                         <label class="label font-bold">4 Digit Pin</label>
                         <input maxlength="4" minlength="4" type="password"
-                            class="input rounded-full bg-[#F4F5F7] text-black w-full" placeholder="Enter 4 Digit Pin number"
-                            id="cashout-pin" />
-                        <button class="btn btn-primary mt-4 rounded-full w-full" id="cashout-btn">withdraw Money</button>
+                            class="input rounded-full bg-[#F4F5F7] text-black w-full"
+                            placeholder="Enter 4 Digit Pin number" id="cashout-pin" />
+                        <button class="btn btn-primary mt-4 rounded-full w-full" id="cashout-btn">withdraw
+                            Money</button>
                     </fieldset>
                 </div>
             </div>
@@ -102,7 +138,7 @@
 
     </section>
     <script src="./machine.js"></script>
-<script src="./cashout.js"></script>
+    <script src="./cashout.js"></script>
 </body>
 
 </html>
