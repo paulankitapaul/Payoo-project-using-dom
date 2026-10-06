@@ -15,7 +15,21 @@ document.getElementById('cashout-btn').addEventListener('click',function(){
     if(pin=='1234'){
         alert('CashOut successfull')
         setBalance(balance)
+        const history = document.getElementById('history-container');
+
+        const newHistory = document.createElement('div');
+
+        newHistory.innerHTML = `
+            <div class="border-b-2 py-3">
+                <p class="font-bold">Add Money</p>
+                <p>Amount: ${cashoutAmount}</p>
+                <p class="text-sm">${new Date()}</p>
+            </div>
+        `;
+
+        history.appendChild(newHistory);
     }
+
 })
 
 

@@ -61,15 +61,15 @@
                 <img src="./assets/opt-1.png" alt="">
                 <p>Transfer Money</p>
             </button>
-            <button class="btn flex-col py-4 btn-primary btn-soft h-full">
+            <button class="btn flex-col py-4 btn-primary btn-soft h-full" onclick="showOnly('bonus-money')">
                 <img src="./assets/opt-1.png" alt="">
                 <p>Get-Bonus</p>
             </button>
-            <button class="btn flex-col py-4 btn-primary btn-soft h-full">
+            <button class="btn flex-col py-4 btn-primary btn-soft h-full" onclick="showOnly('pay-bill')">
                 <img src="./assets/opt-1.png" alt="">
                 <p>Pay-Bill</p>
             </button>
-            <button class="btn flex-col py-4 btn-primary btn-soft h-full">
+            <button class="btn flex-col py-4 btn-primary btn-soft h-full" onclick="showOnly('transaction')">
                 <img src="./assets/opt-1.png" alt="">
                 <p>Transaction</p>
             </button>
@@ -164,7 +164,7 @@
         </div>
 
     </section>
-    <section class="w-11/12 mx-auto py-5" id="bonus-money">
+    <section class="w-11/12 mx-auto py-5 hidden" id="bonus-money">
         <h2 class="font-bold mt-4">Get Bonus</h2>
         <div class="form pt-10">
             <div class="card bg-base-100 w-full shadow-2xl">
@@ -181,12 +181,59 @@
         </div>
 
     </section>
+    <section id="pay-bill" class=" w-11/12 mx-auto py-5 hidden">
+        <h2 class="font-bold mt-4">Pay-Bill</h2>
+        <div class="form pt-10">
+            <div class="card bg-base-100 w-full shadow-2xl">
+                <div class="card-body">
+                    <fieldset class="fieldset">
+                        <label class="label font-medium">Select to pay</label>
+                        <select id="pay-bill-bank" class="select select-ghost w-full rounded-full">
+                            <option disabled selected>select bank</option>
+                            <option>UCB</option>
+                            <option>City</option>
+                            <option>Bank Asia</option>
+                        </select>
+
+                        <label class="label font-medium">Biller Account Number</label>
+                        <input type="email" class="input rounded-full bg-[#F4F5F7] text-black w-full"
+                            placeholder="Enter 11 digit number" id="pay-bill-Number" />
+                        <br>
+                        <label class="label font-medium">Amount to Pay</label>
+                        <input type="number" class="input rounded-full bg-[#F4F5F7] text-black w-full"
+                            placeholder="Add Amount to pay" id="pay-bill-ammount" />
+                        <br>
+
+                        <label class="label font-bold">4 Digit Pin</label>
+                        <input maxlength="4" minlength="4" type="password"
+                            class="input rounded-full bg-[#F4F5F7] text-black w-full"
+                            placeholder="Enter 4 Digit Pin number" id="pay-bill-pin" />
+                        <button class="btn btn-primary mt-4 rounded-full w-full" id="pay-bill-btn">Pay Now</button>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section id="transaction" class=" w-11/12 mx-auto py-5 hidden">
+        <h2 class="font-bold mt-4">Transactions</h2>
+        <div class="history-container" id="history-container">
+            
+        </div>
+
+    </section>
+
+
 
     <script src="./machine.js"></script>
     <script src="./add-money.js"></script>
     <script src="./cashout.js"></script>
     <script src="./tranfer.js"></script>
+    <script src="./bonus.js"></script>
+    <script src="./payBill.js"></script>
     
+
+
 </body>
 
 </html>

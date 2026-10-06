@@ -1,7 +1,7 @@
 function getValueById(id){
     const input = document.getElementById(id)
     const value = input.value ;
-    return value
+    return value;
 }
 function getBalance(){
     const balanceElement = document.getElementById('balance');
@@ -16,9 +16,15 @@ function showOnly(id){
     const addMoney = document.getElementById('add-money');
     const cashOut = document.getElementById('cash-out');
     const transfer = document.getElementById('transfer-money')
+    const bonus = document.getElementById('bonus-money')
+    const payBill = document.getElementById('pay-bill');
+    const transaction = document.getElementById('transaction')
     addMoney.classList.add('hidden')
     cashOut.classList.add('hidden')
     transfer.classList.add('hidden')
+    bonus.classList.add('hidden')
+    payBill.classList.add('hidden')
+    transaction.classList.add('hidden')
     const selectedId = document.getElementById(id);
     selectedId.classList.remove('hidden')
 }
