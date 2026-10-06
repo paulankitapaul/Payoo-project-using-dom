@@ -49,15 +49,15 @@
         <p class="text-[#848484]">Enjoy easy and convenient financial services with us. <br>
             Cashout charge is low and </p>
         <div class="buttons grid grid-cols-3 gap-3 py-6 border-2 border-red-500">
-            <button class="btn flex-col py-4 btn-primary btn-soft h-full">
+            <button class="btn flex-col py-4 btn-primary btn-soft h-full" onclick="showOnly('add-money')">
                 <img src="./assets/opt-1.png" alt="">
                 <p>Add Money</p>
             </button>
-            <button class="btn flex-col py-4 btn-primary btn-soft h-full">
+            <button class="btn flex-col py-4 btn-primary btn-soft h-full" onclick="showOnly('cash-out')">
                 <img src="./assets/opt-1.png" alt="">
                 <p>Cashout</p>
             </button>
-            <button class="btn flex-col py-4 btn-primary btn-soft h-full">
+            <button class="btn flex-col py-4 btn-primary btn-soft h-full" onclick="showOnly('transfer-money')">
                 <img src="./assets/opt-1.png" alt="">
                 <p>Transfer Money</p>
             </button>
@@ -75,14 +75,14 @@
             </button>
         </div>
     </section>
-    <section id="add-money w-11/12 mx-auto py-5">
+    <section id="add-money" class=" w-11/12 mx-auto py-5 hidden">
         <h2 class="font-bold mt-4">Add Money</h2>
         <div class="form pt-10">
             <div class="card bg-base-100 w-full shadow-2xl">
                 <div class="card-body">
                     <fieldset class="fieldset">
                         <label class="label font-medium">Select A bank</label>
-                        <select class="select select-ghost w-full rounded-full">
+                        <select id="add-money-bank" class="select select-ghost w-full rounded-full">
                             <option disabled selected>select bank</option>
                             <option>UCB</option>
                             <option>City</option>
@@ -110,7 +110,7 @@
         </div>
 
     </section>
-    <section class="w-11/12 mx-auto py-5">
+    <section class="w-11/12 mx-auto py-5 hidden" id="cash-out">
         <h2 class="font-bold mt-4">CashOut</h2>
         <div class="form pt-10">
             <div class="card bg-base-100 w-full shadow-2xl">
@@ -137,8 +137,39 @@
         </div>
 
     </section>
+
+    <section class="w-11/12 mx-auto py-5 hidden" id="transfer-money">
+        <h2 class="font-bold mt-4">Transfer Money</h2>
+        <div class="form pt-10">
+            <div class="card bg-base-100 w-full shadow-2xl">
+                <div class="card-body">
+                    <fieldset class="fieldset">
+                        <label class="label font-medium">User Account Number</label>
+                        <input type="email" class="input rounded-full bg-[#F4F5F7] text-black w-full"
+                            placeholder="Enter 11 digit number" id="transfer-number" />
+                        <br>
+                        <label class="label font-medium">Ammount</label>
+                        <input type="number" class="input rounded-full bg-[#F4F5F7] text-black w-full"
+                            placeholder="Enter ammount to transfer" id="transfer-ammount" />
+                        <br>
+
+                        <label class="label font-bold">4 Digit Pin</label>
+                        <input maxlength="4" minlength="4" type="password"
+                            class="input rounded-full bg-[#F4F5F7] text-black w-full"
+                            placeholder="Enter 4 Digit Pin number" id="transfer-pin" />
+                        <button class="btn btn-primary mt-4 rounded-full w-full" id="transfer-btn">Send Now</button>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
     <script src="./machine.js"></script>
+    <script src="./add-money.js"></script>
     <script src="./cashout.js"></script>
+    <script src="./tranfer.js"></script>
+    
 </body>
 
 </html>
